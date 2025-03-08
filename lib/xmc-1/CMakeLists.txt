@@ -1,0 +1,51 @@
+
+add_library(XMCNewlib OBJECT
+    "Newlib/syscalls.c"
+)
+
+add_library(XMCLib STATIC
+    "XMCLib/src/xmc_acmp.c"
+    "XMCLib/src/xmc_bccu.c"
+    "XMCLib/src/xmc_can.c"   
+    "XMCLib/src/xmc_ccu4.c"
+    "XMCLib/src/xmc_ccu8.c"
+    "XMCLib/src/xmc_common.c"
+    "XMCLib/src/xmc_common_gcc.S"
+    "XMCLib/src/xmc_dac.c"
+    "XMCLib/src/xmc_dma.c"
+    "XMCLib/src/xmc_dsd.c"
+    "XMCLib/src/xmc_ebu.c"
+    "XMCLib/src/xmc_ecat.c"
+    "XMCLib/src/xmc_eru.c"
+    "XMCLib/src/xmc_eth_mac.c"
+    "XMCLib/src/xmc_eth_phy_dp83848.c"
+    "XMCLib/src/xmc_eth_phy_ksz8031rnl.c"
+    "XMCLib/src/xmc_eth_phy_ksz8081rnb.c"
+    "XMCLib/src/xmc_fce.c"
+    "XMCLib/src/xmc_gpio.c"
+    "XMCLib/src/xmc_hrpwm.c"
+    "XMCLib/src/xmc_i2c.c"
+    "XMCLib/src/xmc_i2s.c"
+    "XMCLib/src/xmc_ledts.c"
+    "XMCLib/src/xmc_math.c"
+    "XMCLib/src/xmc_pau.c"
+    "XMCLib/src/xmc_posif.c"
+    "XMCLib/src/xmc_prng.c"
+    "XMCLib/src/xmc_rtc.c"
+    "XMCLib/src/xmc_sdmmc.c"
+    "XMCLib/src/xmc_spi.c"
+    "XMCLib/src/xmc_uart.c"
+    "XMCLib/src/xmc_usbd.c"
+    "XMCLib/src/xmc_usbh.c"
+    "XMCLib/src/xmc_usic.c"
+    "XMCLib/src/xmc_vadc.c"
+    "XMCLib/src/xmc_wdt.c"
+    "XMCLib/src/xmc1_eru.c"
+    "XMCLib/src/xmc1_flash.c"
+    "XMCLib/src/xmc1_gpio.c"
+    "XMCLib/src/xmc1_rtc.c"
+    "XMCLib/src/xmc1_scu.c"
+)
+
+target_include_directories(XMCLib PUBLIC CMSIS/cm0 CMSIS/XMC1300 XMCLib/inc)
+target_compile_options(XMCLib PRIVATE -Wno-tautological-compare -Wno-array-bounds)
