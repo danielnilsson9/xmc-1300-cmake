@@ -7,7 +7,7 @@ set(LINKER_SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/ld/XMC1300x0064.ld")
 add_compile_definitions(XMC1302_T038x0064)
 
 add_subdirectory(lib/xmc-1)
-add_subdirectory(lib/xmc-bldc-scalar-hall)
+add_subdirectory(lib/xmc-pmsm-foc)
 
 add_executable(xmc-1300
     src/startup/startup_XMC1300.S
@@ -17,7 +17,7 @@ add_executable(xmc-1300
 
 target_link_options(xmc-1300 PRIVATE "-T${LINKER_SCRIPT}")
 
-target_link_libraries(xmc-1300 PUBLIC XMCNewlib XMCLib XMCBldcScalarHall)
+target_link_libraries(xmc-1300 PUBLIC XMCNewlib XMCLib XMCPmsmFoc)
 
 # Generate ihex file
 add_custom_command(

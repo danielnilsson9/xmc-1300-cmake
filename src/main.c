@@ -1,39 +1,25 @@
-#include "xmc_gpio.h"
-#include "xmc_common.h"
+#include "Configuration/pmsm_foc_variables_scaling.h"
+#include "ControlModules/pmsm_foc_interface.h"
 
-#define TICKS_PER_SECOND 1000
-#define TICKS_WAIT 5000
 
-#define LED1 P1_5
-
-void SysTick_Handler(void)
-{
-    static uint32_t ticks = 0;
-
-    ticks++;
-    if (ticks == TICKS_WAIT)
-    {
-        XMC_GPIO_ToggleOutput(LED1);
-        ticks = 0;
-    }
-}
+int cbs = 0;
 
 int main(void)
 {
-    XMC_GPIO_CONFIG_t config;
+    /* Init MCU and motor control peripherals */
+    pmsm_foc_init();
 
-    config.mode = XMC_GPIO_MODE_OUTPUT_PUSH_PULL;
-    config.output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH;
-
-    XMC_GPIO_Init(LED1, &config);
-
-    config.output_level = XMC_GPIO_OUTPUT_LEVEL_LOW;
-
-    /* System timer configuration */
-    SysTick_Config(SystemCoreClock / TICKS_PER_SECOND);
+    pmsm_foc_motor_start();
 
     while (1)
     {
-        XMC_DelayCycles(200);
+        // int speed = pmsm_foc_get_motor_speed();
     }
+
+    return 0;
+}
+
+void pmsm_foc_secondaryloop_callback()
+{ 
+    pmsm_foc_set_motor_target_speed(1000);
 }

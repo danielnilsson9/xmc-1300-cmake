@@ -1,0 +1,58 @@
+
+set(FOCLib_LIB "${CMAKE_CURRENT_LIST_DIR}/FOCLib/libPLL_Estimator.a")
+
+set(XMCPmsmFoc_HEADERS
+    "Configuration/Controller_Card/pmsm_foc_CUSTOM_MCU.h"
+    "Configuration/Inverter_Card/pmsm_foc_CUSTOM_INVERTER.h"
+    "Configuration/Motors/pmsm_foc_motor_CUSTOM_MOTOR.h"
+    "Configuration/pmsm_foc_const.h"
+    "Configuration/pmsm_foc_macro.h"
+    "Configuration/pmsm_foc_user_config.h"
+    "Configuration/pmsm_foc_variables_scaling.h"
+    "ControlModules/pmsm_foc_directfoc_startup.h"
+    "ControlModules/pmsm_foc_functions.h"
+    "ControlModules/pmsm_foc_interface.h"
+    "ControlModules/pmsm_foc_pi.h"
+    "FOCLib/pmsm_foc_pll_estimator.h"
+    "Interrupts/pmsm_foc_error_handling.h"
+    "Interrupts/pmsm_foc_statemachine.h"
+    "MCUInit/adc.h"
+    "MCUInit/ccu4.h"
+    "MCUInit/ccu8.h"
+    "MCUInit/clock.h"
+    "MCUInit/gpio.h"
+    "MCUInit/math_init.h"
+    "MCUInit/mcuinit.h"
+    "MCUInit/uart.h"
+    "MCUInit/wdt.h"
+)
+
+add_library(XMCPmsmFoc STATIC
+    ${XMCPmsmFoc_HEADERS}
+    "ControlModules/pmsm_foc_directfoc_startup.c"
+    "ControlModules/pmsm_foc_functions.c"
+    "ControlModules/pmsm_foc_interface.c"
+    "ControlModules/pmsm_foc_pi.c"
+    "ControlModules/pmsm_foc_svmsinetable.c"
+    "Interrupts/pmsm_foc_ctrap_isr.c"
+    "Interrupts/pmsm_foc_error_handling.c"
+    "Interrupts/pmsm_foc_statemachine.c"
+    "Interrupts/pmsm_foc_vadc_isr.c"
+    "MCUInit/adc.c"
+    "MCUInit/ccu4.c"
+    "MCUInit/ccu8.c"
+    "MCUInit/clock.c"
+    "MCUInit/gpio.c"
+    "MCUInit/math_init.c"
+    "MCUInit/mcuinit.c"
+    "MCUInit/uart.c"
+    "MCUInit/wdt.c"
+    "MIDSys/pmsm_foc_current_singleshunt.c"
+    "MIDSys/pmsm_foc_current_threeshunt.c"
+    "MIDSys/pmsm_foc_debug.c"
+    "MIDSys/pmsm_foc_pwmsvm.c"
+    "MIDSys/pmsm_foc_transitions.c"
+)
+
+target_include_directories(XMCPmsmFoc PUBLIC .)
+target_link_libraries(XMCPmsmFoc PUBLIC XMCLib ${FOCLib_LIB})
