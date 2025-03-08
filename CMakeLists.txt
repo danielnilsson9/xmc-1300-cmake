@@ -18,3 +18,11 @@ add_executable(xmc-1300
 target_link_options(xmc-1300 PRIVATE "-T${LINKER_SCRIPT}")
 
 target_link_libraries(xmc-1300 PUBLIC XMCNewlib XMCLib XMCBldcScalarHall)
+
+# Generate ihex file
+add_custom_command(
+    POST_BUILD
+    COMMENT Generating xmc-1300.hex
+    TARGET xmc-1300
+    COMMAND ${CMAKE_OBJCOPY} ARGS -O ihex xmc-1300 xmc-1300.hex
+)

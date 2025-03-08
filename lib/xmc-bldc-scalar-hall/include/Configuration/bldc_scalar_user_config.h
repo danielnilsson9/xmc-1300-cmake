@@ -116,12 +116,12 @@
  * Motor control kit
  * Options - KIT_XMC1X_AK_MOTOR_001, KIT_XMC750WATT_MC_AK_V1, KIT_CUSTOM
  */
-#define   MOTOR0_BLDC_SCALAR_BOARD                         (KIT_XMC1X_AK_MOTOR_001)
+#define   MOTOR0_BLDC_SCALAR_BOARD                         (KIT_CUSTOM)
 /**
  * BLDC motor
  * Options - MOTOR_EC_MAXON_267121, MOTOR_CUSTOM
  */
-#define   MOTOR0_BLDC_SCALAR_MOTOR                         (MOTOR_EC_MAXON_267121)
+#define   MOTOR0_BLDC_SCALAR_MOTOR                         (MOTOR_CUSTOM)
 
 /* Motor Parameters */
 #if (MOTOR0_BLDC_SCALAR_MOTOR == MOTOR_EC_MAXON_267121)
@@ -130,7 +130,7 @@
 
 #elif (MOTOR0_BLDC_SCALAR_MOTOR == MOTOR_CUSTOM)
 #define   MOTOR0_BLDC_SCALAR_MOTOR_NO_LOAD_SPEED          (6200U)      /*!< No load speed of the motor in RPM */
-#define   MOTOR0_BLDC_SCALAR_MOTOR_POLE_PAIRS             (4U)         /*!< Pole pairs */
+#define   MOTOR0_BLDC_SCALAR_MOTOR_POLE_PAIRS             (8U)         /*!< Pole pairs */
 #endif
 
 /*********************************************************************************************************************
@@ -141,7 +141,7 @@
  * Control scheme selection:
  * Options - BLDC_SCALAR_VOLTAGE_CTRL, BLDC_SCALAR_SPEED_CTRL, BLDC_SCALAR_CURRENT_CTRL, BLDC_SCALAR_SPEEDCURRENT_CTRL
  */
-#define   MOTOR0_BLDC_SCALAR_CTRL_SCHEME            (BLDC_SCALAR_SPEED_CTRL)
+#define   MOTOR0_BLDC_SCALAR_CTRL_SCHEME            (BLDC_SCALAR_CURRENT_CTRL)
 /**
  * PWM modulation scheme selection:
  * Options - BLDC_SCALAR_PWM_HIGHSIDE, BLDC_SCALAR_PWM_LOWSIDE, BLDC_SCALAR_PWM_HIGHSIDE_SYNCHRECTI
@@ -266,7 +266,7 @@
  * Options - BLDC_SCALAR_IDC_DIRECT_CURRENT, BLDC_SCALAR_IDC_AVG_CURRENT
  */
 #define   MOTOR0_BLDC_SCALAR_OVER_CURRENT_SOURCE           (BLDC_SCALAR_IDC_DIRECT_CURRENT)
-#define   MOTOR0_BLDC_SCALAR_OVER_CURRENT                  (2.7F)       /*!< Current is in Amps Max Range: MOTOR0_BLDC_SCALAR_MAX_CURRENT*/
+#define   MOTOR0_BLDC_SCALAR_OVER_CURRENT                  (40.F)       /*!< Current is in Amps Max Range: MOTOR0_BLDC_SCALAR_MAX_CURRENT*/
 #define   MOTOR0_BLDC_SCALAR_CURRENT_PROTECTION_TIME       (50.0F)       /*!< Detection time for over current protection in mSec*/
 
 #define   MOTOR0_BLDC_SCALAR_SHORTCIRCUIT_CURRENT          (2.75F)    /*!< Current is in Amps. Motor is stopped immediately when current is above this limit
