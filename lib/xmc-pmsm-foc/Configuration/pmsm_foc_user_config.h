@@ -126,16 +126,16 @@
 #endif
 
 /*      --------------------------------------------------- SVM Switching Sequences ---------------------------------------- */
-#define SVM_SWITCHING_SCHEME                        STANDARD_SVM_7_SEGMENT                        /*1. STANDARD_SVM_7_SEGMENT          2. STANDARD_SVM_5_SEGMENT     */
+#define SVM_SWITCHING_SCHEME                        STANDARD_SVM_7_SEGMENT                           /*1. STANDARD_SVM_7_SEGMENT          2. STANDARD_SVM_5_SEGMENT     */
 /*      --------------------------------------------------- ADC_STARTUP_CALIBRATION only for XMC1300 AA step ---------------------------------------- */
-#define ADC_STARTUP_CALIBRATION                     ENABLED                                       /*1. ENABLED       2. DISABLED*/
+#define ADC_STARTUP_CALIBRATION                     ENABLED                                         /*1. ENABLED       2. DISABLED*/
 
-#define ADC_ALTERNATE_REFERENCE                     DISABLED                                      /*1. ENABLED       2. DISABLED*/
+#define ADC_ALTERNATE_REFERENCE                     DISABLED                                         /*1. ENABLED       2. DISABLED*/
 
 /*      --------------------------------------------------- Add d-q voltage decoupling components ---------------------------------------- */
-#define DQ_DECOUPLING                               ENABLED                                         /*1. ENABLED       2. DISABLED*/
+#define DQ_DECOUPLING                               ENABLED                                          /*1. ENABLED       2. DISABLED*/
 
-#define WATCH_DOG_TIMER                             ENABLED                                         /*1. ENABLED       2. DISABLED*/
+#define WATCH_DOG_TIMER                             DISABLED                                         /*1. ENABLED       2. DISABLED*/
 /*      --------------------------------------------------- FOC Control Safety Protection ---------------------------------------- */
 #define VDC_UNDER_OVERVOLTAGE_PROTECTION            DISABLED                                         /*1. ENABLED       2. DISABLED*/
 #define VDC_UNDER_OVERVOLTAGE_PERCENTAGE			(20U)

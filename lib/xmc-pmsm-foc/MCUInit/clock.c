@@ -107,10 +107,9 @@ void pmsm_foc_reset_clock_init(void)
 
 	/* Enable reset triggered by critical events: Flash ECC error, loss of clock, 16kbytes SRAM parity error */
 	XMC_SCU_RESET_EnableResetRequest((uint32_t)XMC_SCU_RESET_REQUEST_FLASH_ECC_ERROR |
-	                                 (uint32_t)XMC_SCU_RESET_REQUEST_CLOCK_LOSS |
-	                                 (uint32_t)XMC_SCU_RESET_REQUEST_SRAM_PARITY_ERROR);
+	                                  (uint32_t)XMC_SCU_RESET_REQUEST_CLOCK_LOSS |
+	                                  (uint32_t)XMC_SCU_RESET_REQUEST_SRAM_PARITY_ERROR);
 
 	/* 32MHz MCLK, PCLK = 2 x MCLK = 64MHz, RTC clock is standby clock, Counter Adjustment = 1024 clock cycles */
 	XMC_SCU_CLOCK_Init(&clock_config);
-
 }

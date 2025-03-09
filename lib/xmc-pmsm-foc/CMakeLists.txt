@@ -27,7 +27,7 @@ set(XMCPmsmFoc_HEADERS
     "MCUInit/wdt.h"
 )
 
-add_library(XMCPmsmFoc STATIC
+add_library(XMCPmsmFoc OBJECT
     ${XMCPmsmFoc_HEADERS}
     "ControlModules/pmsm_foc_directfoc_startup.c"
     "ControlModules/pmsm_foc_functions.c"

@@ -101,7 +101,7 @@ void pmsm_foc_gpio_Init(void)
 	/* P0.12 as CCU80 Trap input, internal pull-up */
 	XMC_GPIO_SetMode(TRAP_PIN, XMC_GPIO_MODE_INPUT_PULL_UP);
 
-//  /* P1.4 as GPIO */
+    /* P1.4 as GPIO */
 	XMC_GPIO_SetMode (TEST_PIN,XMC_GPIO_MODE_OUTPUT_PUSH_PULL);
 
 	XMC_GPIO_SetOutputLow(TEST_PIN);

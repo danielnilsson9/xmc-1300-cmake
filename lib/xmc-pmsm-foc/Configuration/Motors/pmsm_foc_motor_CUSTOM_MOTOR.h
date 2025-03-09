@@ -74,7 +74,7 @@
 #define  USER_MOTOR_POLE_PAIR                       (4.0f)        /* Motor Pole Pairs */
 /*      --------------------------------------------------- Constant Speed Control Mode (Used when Constant Speed Control is enabled) ---------------------------------------- */
 /*      --------------------------------------------------- POT ADC, or PWM to Adjust Speed ---------------------------------------- */
-#define USER_SPEED_HIGH_LIMIT_RPM                   (1300.0f)
+#define USER_SPEED_HIGH_LIMIT_RPM                   (4750.0f)
 #define USER_SPEED_LOW_LIMIT_RPM                    (uint32_t) (USER_SPEED_HIGH_LIMIT_RPM / 20U)
 #define USER_SPEED_RAMPUP_RPM_PER_S                 (500U)
 #define USER_SPEED_RAMPDOWN_RPM_PER_S               (500U)

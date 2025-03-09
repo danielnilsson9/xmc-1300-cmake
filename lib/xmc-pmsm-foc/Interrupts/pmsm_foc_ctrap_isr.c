@@ -71,10 +71,11 @@ void pmsm_foc_trap_protection_irq(void)
 {
   pmsm_foc_disable_inverter(); /* Disable gate driver. */
 
-  Motor.State = TRAP_PROTECTION; /*
-                                  * Next PWM cycles, go to trap protection, until MCU reset / POR
-                                  * to resume normal motor operation.
-                                  */
+  /*
+   * Next PWM cycles, go to trap protection, until MCU reset / POR
+   * to resume normal motor operation.
+   */
+  Motor.State = TRAP_PROTECTION;
 
   Motor.CCU8_Trap_Status = 0x01;
 #if(SETTING_TARGET_SPEED == BY_UART_ONLY)

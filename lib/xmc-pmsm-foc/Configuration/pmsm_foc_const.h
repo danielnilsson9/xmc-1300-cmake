@@ -143,6 +143,6 @@
 #define CORDIC_ROTATION_MODE                        (0x6A)                  /* CORDIC: Circular Rotation Mode. MPS: Divide by 2 (default).*/
 
 
-#define PMSM_FOC_SECONDARYLOOP_CALLBACK       ENABLED  /*ENABLED or DISABLED, pmsm_foc_secondaryloop_callback() to be define*/
+#define PMSM_FOC_SECONDARYLOOP_CALLBACK             ENABLED  /*ENABLED or DISABLED, pmsm_foc_secondaryloop_callback() to be define*/
 
 #endif /* PMSM_FOC_CONFIGURATION_PMSM_FOC_CONST_H_ */

@@ -62,7 +62,7 @@ set(XMCLIb_HEADERS
     "XMCLib/inc/xmc1_usic_map.h"
 )
 
-add_library(XMCLib STATIC
+add_library(XMCLib OBJECT
     ${XMCLIb_HEADERS}
     "XMCLib/src/xmc_acmp.c"
     "XMCLib/src/xmc_bccu.c"

@@ -93,7 +93,7 @@
 
 #elif(INTERNAL_OP_GAIN == DISABLED)
 #define USER_RIN_PHASECURRENT_KOHM                  (1.0f)                  /* R_IN (of equivalent amplifier) kohm */
-#define USER_R_PHASECURRENT_FEEDBACK_KOHM           (10.4f)                 /* R_FEEDBACK (of equivalent amplifier) kohm */
+#define USER_R_PHASECURRENT_FEEDBACK_KOHM           (10.0f)                 /* R_FEEDBACK (of equivalent amplifier) kohm */
 #define USER_RIN_DCCURRENT_KOHM                     (1.0f)                  /* Rin for dc current sensing */
 #define USER_R_DCCURRENT_FEEDBACK_KOHM              (10.0f)                 /* Rf for dc current sensing */
 #define G_OPAMP_PER_PHASECURRENT                    (USER_R_PHASECURRENT_FEEDBACK_KOHM / USER_RIN_PHASECURRENT_KOHM)
