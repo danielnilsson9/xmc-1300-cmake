@@ -74,7 +74,7 @@
 #define INTERNAL_OP_GAIN                            DISABLED               /*1. ENABLED       2. DISABLED (Please configure OP-Gain manually) */
 #define USER_VDC_LINK_V                             (30.0f)                /* Hardware Inverter VDC link voltage in V  */
 #define USER_CCU8_PWM_FREQ_HZ                       (20000U)               /* CCU8 PWM Switching Frequency in Hz*/
-#define USER_DEAD_TIME_US                           (0.75f)                /* deadtime, rise(left) and fall values in us  */
+#define USER_DEAD_TIME_US                           (0.175f)               /* deadtime, rise(left) and fall values in us  */
 
 #define USER_BOOTSTRAP_PRECHARGE_TIME_MS            (20U)                 /* Initial Bootstrap precharging time in ms */
 #define USER_DC_LINK_DIVIDER_RATIO                  (float)(20.f/(330.f + 20.f)) /* R1/(R2+R1) ratio for DC link MCU ADC */

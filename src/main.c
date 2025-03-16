@@ -23,23 +23,54 @@ int main(void)
     config.output_level = XMC_GPIO_OUTPUT_LEVEL_HIGH;
     XMC_GPIO_Init(LED1, &config);
 
-    pmsm_foc_motor_start();
-    
-    while (1)
+
+    XMC_Delay(1000);
+   
+
+    //while(1)
     {
-        // int speed = pmsm_foc_get_motor_speed();
-        //ticks++;
-        //if (ticks == 1000)
-        //{
-            //XMC_GPIO_ToggleOutput(LED1);
-            //ticks = 0;
-        //}
+        
+        // pmsm_foc_set_motor_target_torque(USER_IQ_REF_HIGH_LIMIT / 4);
+        
+        // XMC_Delay(1000);
+  
+        // pmsm_foc_motor_stop();
+        // pmsm_foc_set_motor_target_torque(0);
+
+        // XMC_Delay(1000);
     }
+
+    pmsm_foc_motor_start();
+    pmsm_foc_set_motor_target_torque(USER_IQ_REF_HIGH_LIMIT / 25);
+
+    XMC_Delay(5000);
+    pmsm_foc_motor_stop();
+
+
+    // while(1)
+    // {
+    //     pmsm_foc_motor_start();
+    //     for (int i = 4; i < USER_IQ_REF_HIGH_LIMIT / 16; i++)
+    //     {
+    //         pmsm_foc_set_motor_target_torque(i);
+    //         XMC_Delay(8);
+    //     }
+    
+    //     for (int i = USER_IQ_REF_HIGH_LIMIT / 16; i > 4; i--)
+    //     {
+    //         pmsm_foc_set_motor_target_torque(i);
+    //         XMC_Delay(8);
+    //     }
+    //     pmsm_foc_motor_stop();
+    // }
+
+
+    while (1);
 
     return 0;
 }
 
 void pmsm_foc_secondaryloop_callback()
 { 
-    pmsm_foc_set_motor_target_speed(3000);
+    // pmsm_foc_set_motor_target_speed(1000);
 }

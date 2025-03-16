@@ -23,8 +23,15 @@ set(XMCPmsmFoc_HEADERS
     "MCUInit/gpio.h"
     "MCUInit/math_init.h"
     "MCUInit/mcuinit.h"
+#    "MCUInit/posif.h"
     "MCUInit/uart.h"
     "MCUInit/wdt.h"
+    "MidSys/pmsm_foc_current_singleshunt.h"
+    "MidSys/pmsm_foc_current_threeshunt.h"
+    "MidSys/pmsm_foc_debug.h"
+    "MidSys/pmsm_foc_pwmsvm.h"
+#    "MidSys/pmsm_foc_speed_pos_hall.h"
+    "MidSys/pmsm_foc_transitions.h"
 )
 
 add_library(XMCPmsmFoc OBJECT
@@ -45,12 +52,14 @@ add_library(XMCPmsmFoc OBJECT
     "MCUInit/gpio.c"
     "MCUInit/math_init.c"
     "MCUInit/mcuinit.c"
+    "MCUInit/posif.c"
     "MCUInit/uart.c"
     "MCUInit/wdt.c"
     "MIDSys/pmsm_foc_current_singleshunt.c"
     "MIDSys/pmsm_foc_current_threeshunt.c"
     "MIDSys/pmsm_foc_debug.c"
     "MIDSys/pmsm_foc_pwmsvm.c"
+#    "MIDSys/pmsm_foc_speed_pos_hall.c"
     "MIDSys/pmsm_foc_transitions.c"
 )
 

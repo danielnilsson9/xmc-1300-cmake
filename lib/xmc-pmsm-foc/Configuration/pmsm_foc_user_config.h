@@ -91,7 +91,7 @@
                                                                                               2. USER_THREE_SHUNT_ASSYNC_CONV
                                                                                               3. USER_THREE_SHUNT_SYNC_CONV*/
 /*      --------------------------------------------------- FOC Control and Startup Scheme (Only Select 1 Scheme at one time) ---------------------------------------- */
-#define MY_FOC_CONTROL_SCHEME                       SPEED_CONTROLLED_DIRECT_FOC              /*1. SPEED_CONTROLLED_VF_ONLY,
+#define MY_FOC_CONTROL_SCHEME                       TORQUE_CONTROLLED_DIRECT_FOC              /*1. SPEED_CONTROLLED_VF_ONLY,
                                                                                              2. SPEED_CONTROLLED_VF_MET_FOC
                                                                                              3. SPEED_CONTROLLED_DIRECT_FOC
                                                                                              4. TORQUE_CONTROLLED_DIRECT_FOC
@@ -107,7 +107,7 @@
 /*      --------------------------------------------------- Constant Torque Control Mode (Used when Constant Torque Control is enabled) ---------------------------------------- */
 /*      --------------------------------------------------- IQ_REF-limit low < IQ_REF < IQ_REF-limit high  ---------------------------------------- */
 #if(MY_FOC_CONTROL_SCHEME == TORQUE_CONTROLLED_DIRECT_FOC)
-#define USER_IQ_CURRENT_ALLOWED_A                   (2.0f)                                                                          /* 0 < USER_IQ_CURRENT_ALLOWED_A < I_MAX_A*/
+#define USER_IQ_CURRENT_ALLOWED_A                   (10.0f)                                                                          /* 0 < USER_IQ_CURRENT_ALLOWED_A < I_MAX_A*/
 #define USER_IQ_REF_LOW_LIMIT                       (0U)
 #define USER_IQ_REF_HIGH_LIMIT                      (uint32_t) (32768 * USER_IQ_CURRENT_ALLOWED_A /I_MAX_A)                          /*  I_MAX_A = (VAREF_V/(USER_R_SHUNT_OHM * OP_GAIN_FACTOR)) / 2.0f), IFX_XMC_LVPB_R3 - 13.6A */
 #define USER_IQ_RAMPUP                              (10U)
