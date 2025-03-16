@@ -162,6 +162,8 @@
 //#define MOTOR_TRANSITION                            0                       /* Motor is in transition mode */
 //#define MOTOR_STABLE                                0xAB                    /* Motor is in stable mode */
 #define DIRECTION_INC                               0                       /* Motor rotation direction - rotor angle increasing */
+#define DIRECTION_DEC                               1                       /* Motor rotation direction - rotor angle decreasing */
+
 #define ADJUST_DONE                                 0                       /* Parameter adjustment has been done */
 
 #define ACTIVE_HIGH                                 0

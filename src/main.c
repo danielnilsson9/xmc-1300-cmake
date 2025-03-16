@@ -41,9 +41,9 @@ int main(void)
     }
 
     pmsm_foc_motor_start();
-    pmsm_foc_set_motor_target_torque(USER_IQ_REF_HIGH_LIMIT / 25);
+    pmsm_foc_set_motor_target_torque(USER_IQ_REF_HIGH_LIMIT / 10);
 
-    XMC_Delay(5000);
+    XMC_Delay(500);
     pmsm_foc_motor_stop();
 
 

@@ -140,7 +140,7 @@ void pmsm_motorcontrol_init (void)
 #if(CATCH_FREE_RUNNING == ENABLED)
     Motor.State = MOTOR_COASTING;
 #endif
-    Motor.Rotation_Dir = DIRECTION_INC; /* Motor rotation direction - rotor angle increasing. */
+    Motor.Rotation_Dir = DIRECTION_DEC;        /* Motor rotation direction - rotor angle increasing. */
     pmsm_foc_variables_init ();                /* Init variables. */
 
     XMC_GPIO_ToggleOutput(TEST_PIN);

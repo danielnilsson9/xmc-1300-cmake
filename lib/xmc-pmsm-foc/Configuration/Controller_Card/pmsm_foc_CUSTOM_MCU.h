@@ -112,8 +112,9 @@
  ***************************************/
 #define CCU8_MODULE          CCU80
 #define CCU8_MODULE_PHASE_U  CCU80_CC80
-#define CCU8_MODULE_PHASE_V  CCU80_CC81
-#define CCU8_MODULE_PHASE_W  CCU80_CC82
+// :NOTE: V/W swapped to reverse rotation direction
+#define CCU8_MODULE_PHASE_V  CCU80_CC82
+#define CCU8_MODULE_PHASE_W  CCU80_CC81
 #define CCU8_MODULE_ADC_TR   CCU80_CC83
 #define CCU8_MODULE_PRESCALER_VALUE         (0U)
 
@@ -137,17 +138,20 @@
 
 /* ADC is configured as three shunt in SYNC*/
 #if (CURRENT_SENSING ==  USER_THREE_SHUNT_SYNC_CONV)
+
 /* Motor Phase U VADC define */
 #define VADC_IU_G1_CHANNEL    (4U)        /* P2.9, VADC group1 channel 4 */
 #define VADC_IU_G0_CHANNEL    (2U)        /* P2.9, VADC group0 channel 2 */
 
+// :NOTE: V/W swapped to reverse rotation direction
+
 /* Motor Phase V VADC define */
-#define VADC_IV_G1_CHANNEL    (2U)       /* P2.10, VADC group1 channel 2 */
-#define VADC_IV_G0_CHANNEL    (3U)       /* P2.10, VADC group0 channel 3 */
+#define VADC_IW_G1_CHANNEL    (2U)       /* P2.10, VADC group1 channel 2 */
+#define VADC_IW_G0_CHANNEL    (3U)       /* P2.10, VADC group0 channel 3 */
 
 /* Motor Phase W VADC define */
-#define VADC_IW_G1_CHANNEL    (3U)       /* P2.11, VADC group1 channel 3 */
-#define VADC_IW_G0_CHANNEL    (4U)       /* P2.11, VADC group0 channel 4 */
+#define VADC_IV_G1_CHANNEL    (3U)       /* P2.11, VADC group1 channel 3 */
+#define VADC_IV_G0_CHANNEL    (4U)       /* P2.11, VADC group0 channel 4 */
 
 
 
